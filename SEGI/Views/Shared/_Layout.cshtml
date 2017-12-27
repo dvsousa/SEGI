@@ -1,44 +1,205 @@
-﻿<!DOCTYPE html>
+﻿<!doctype html>
+<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
+<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
+<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
+<!--[if gt IE 8]><!-->
 <html>
+<!--<![endif]-->
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Inicial</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-</head>
-<body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                    <li>@Html.ActionLink("Alunos", "Index", "Aluno")</li>
-                </ul>
-                <p class="nav navbar-text navbar-right">Hello, @User.Identity.Name!</p>
-            </div>
-        </div>
-    </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
-    </div>
+    <link rel="stylesheet" href="~/Content/css/boilerplate.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="~/Content/css/slyde_azul.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="~/Content/css/menu.css" type="text/css" />
+    <!--
+    Para saber mais sobre os comentários condicionais sobre as tags html na parte superior do arquivo:
+    paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/
 
+    Se você estiver usando a compilação personalizada do modernizr (http://www.modernizr.com/), faça o seguinte:
+    * insira o link para o seu js aqui
+    * remova o link abaixo para o html5shiv
+    * adicione a classe "no-js" às tags html na parte superior
+    * você também pode remover o link para respond.min.js se tiver incluído o MQ Polyfill na sua compilação do modernizr
+    -->
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <script src="../../Scripts/respond.min.js"></script>
+    <script src="../../Scripts/jquery.min.js"></script>
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
+    <!--initiate accordion-->
+    <script type="text/javascript">
+        $(function () {
+
+            var menu_ul = $('.menu > li > ul'),
+                menu_a = $('.menu > li > a');
+
+            menu_ul.hide();
+
+            menu_a.click(function (e) {
+                e.preventDefault();
+                if (!$(this).hasClass('active')) {
+                    menu_a.removeClass('active');
+                    menu_ul.filter(':visible').slideUp('normal');
+                    $(this).addClass('active').next().stop(true, true).slideDown('normal');
+                } else {
+                    $(this).removeClass('active');
+                    $(this).next().stop(true, true).slideUp('normal');
+                }
+            });
+
+        });
+    </script>
+
+</head>
+<body>
+
+    <div class="top_azul">
+        <h2>SEGI - Sistema Escolar de Gestão Integrado </h2>
+        <div class="log">
+            Bem vindo @User.Identity.Name! <br />
+            <a href="#">Perfil </a> | <a href="#">Help </a>| <a href="#">Logout</a>
+        </div><!-- Fim do log -->
+    </div><!-- Fim do top -->
+
+
+    <div class="gridContainer clearfix">
+
+        <div class="menu_lateral">
+
+            <div id="wrapper">
+
+                <ul class="menu">
+                    <li class="item1">
+                        <a href="#"><img src="~/Content/img/cc/white/png/notepad_2_icon&16.png" />Cadastro de Aluno </a>
+                        <ul class="sub_menu">
+                            <li class="subitem1"><a href="#"><img src="~/Content/img/cc/black/png/pencil_icon&16.png" />Cadastro </a></li>
+                            <li class="subitem2"><a href="#"><img src="~/Content/img/cc/black/png/round_checkmark_icon&16.png" />Matricular </a></li>
+                            <li class="subitem3"><a href="#"><img src="~/Content/img/cc/black/png/case_icon&16.png" />Boletin</a></li>
+                            <li class="subitem4"><a href="#"><img src="~/Content/img/cc/black/png/contact_card_icon&16.png" />Cateirinha </a></li>
+                            <li class="subitem5"><a href="#"><img src="~/Content/img/cc/black/png/print_icon&16.png" />Imprimir Contrato </a></li>
+                        </ul>
+                    </li>
+                    <li class="item2">
+                        <a href="#">Videos </a>
+                        <ul class="sub_menu">
+                            <li class="subitem1"><a href="#">Cute Kittens </a></li>
+                            <li class="subitem2"><a href="#">Strange “Stuff”</a></li>
+                            <li class="subitem3"><a href="#">Automatic Fails </a></li>
+                        </ul>
+                    </li>
+                    <li class="item3">
+                        <a href="#">Galleries </a>
+                        <ul class="sub_menu">
+                            <li class="subitem1"><a href="#">Cute Kittens </a></li>
+                            <li class="subitem2"><a href="#">Strange “Stuff”</a></li>
+                            <li class="subitem3"><a href="#">Automatic Fails </a></li>
+                        </ul>
+                    </li>
+                    <li class="item4">
+                        <a href="#">Podcasts </a>
+                        <ul class="sub_menu">
+                            <li class="subitem1"><a href="#">Cute Kittens </a></li>
+                            <li class="subitem2"><a href="#">Strange “Stuff” </a></li>
+                            <li class="subitem3"><a href="#">Automatic Fails</a></li>
+                        </ul>
+                    </li>
+                    <li class="item5">
+                        <a href="#">Robots </a>
+                        <ul class="sub_menu">
+                            <li class="subitem1"><a href="#">Cute Kittens</a></li>
+                            <li class="subitem2"><a href="#">Strange “Stuff” </a></li>
+                            <li class="subitem3"><a href="#">Automatic Fails</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+            </div><!-- Fim do wrapper -->
+
+
+            <div class="calendario">
+                <!-- Imagem a ser subistituida por código de um calendario -->
+                <img src="~/Content/img/calendario_parasubistiturir.png" />
+
+            </div><!-- Fim do calendario -->
+
+        </div><!-- Fim do menu lateral -->
+
+
+
+
+        <div id="cx_sistemas">
+            <!-- Inicio da caixa do sistemas -->
+
+            <div class="menu_superior">
+
+                <ul class="menu_superior">
+                    <li>
+                        <a href="#"><img src="~/Content/img/icons/home.png" /><br />Home</a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="~/Content/img/icons/cadastro.png" /><br />Cadastro</a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="~/Content/img/icons/cateira.png" /><br />Carteira</a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="~/Content/img/icons/boletins.png" /><br />Boletins</a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="~/Content/img/icons/lista.png" /><br />Lista de Material</a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="~/Content/img/icons/pesquisar.png" /><br />Pesquisar Aluno</a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="~/Content/img/icons/calendario.png" /><br />Calendário</a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="~/Content/img/icons/suporte.png" /><br />Suporte</a>
+                    </li>
+
+                </ul>
+
+            </div><!-- Fim do menu superior -->
+
+            <div class="clear"></div>
+
+            <div class="corpo">
+                <div class="top_corpo">
+                    <h2>@ViewBag.Title</h2><!-- Título do link -->
+                </div>
+                @RenderBody()
+
+
+
+            </div><!-- Fim do corpo -->
+
+            <div class="clear"></div>
+
+
+            <div class="menu_inferior">
+
+                <input type="button" class="menu_novo" value="Novo" />
+                <input type="button" class="menu_edtar" value="Editar" />
+                <input type="button" class="menu_salvar" value="Salvar" />
+
+
+            </div><!-- Fim do menu inferior -->
+
+
+        </div><!-- fim da caixa de sistemas -->
+
+        <div class="clear"></div>
+        <div class="LayoutDiv3">
+            Copyright 2013 - Todos os direitos resevados.
+            <center><a href="http://www.iservice-it.com/" title="iservice-it"><img src="~/Content/img/iservice.png" /></a></center>
+        </div><!-- Fim  do Layou tDiv3-->
+    </div><!-- Fim do gridContainer clearfix-->
 </body>
 </html>

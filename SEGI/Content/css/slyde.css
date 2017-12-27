@@ -1,0 +1,198 @@
+@charset "utf-8";
+/* Mídia fluida simples
+   Nota: a mídia fluida exige a remoção dos seus atributos de comprimento e largura do HTML
+   http://www.alistapart.com/articles/fluid-images/ 
+*/
+img, object, embed, video {
+	max-width: 100%;
+}
+/* O IE 6 não oferece suporte a largura máxima; por isso, o padrão de largura deve ser 100% */
+.ie6 img {
+	width:100%;
+}
+
+/*
+	Propriedades de mídia fluida do Dreamweaver
+	----------------------------------
+	dw-num-cols-mobile:		5;
+	dw-num-cols-tablet:		8;
+	dw-num-cols-desktop:	10;
+	dw-gutter-percentage:	25;
+	
+	Inspiração do "Design da Web responsivo", por Ethan Marcotte 
+	http://www.alistapart.com/articles/responsive-web-design
+	
+	e Sistema de grade dourada, por Joni Korpi
+	http://goldengridsystem.com/
+*/
+
+/* Layout para celulares: menor ou igual a 480 px. */
+
+.gridContainer {
+	margin-left: auto;
+	margin-right: auto;
+	width: 87.36%;
+	padding-left: 1.82%;
+	padding-right: 1.82%;
+}
+#LayoutDiv1 {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+}
+
+/* Layout para tablets: 481 px a 768 px. Herda estilos de: Layout para celulares. */
+
+@media only screen and (min-width: 481px) {
+.gridContainer {
+	width: 90.675%;
+	padding-left: 1.1625%;
+	padding-right: 1.1625%;
+}
+#LayoutDiv1 {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+
+}
+}
+
+/* Layout para desktops: 769 px até o máximo de 1232 px. Herda estilos de: Layout para celulares e Layout para tablets. */
+
+@media only screen and (min-width: 769px) {
+.top_azul {
+	width: 100%;
+	height: 36px;
+	color: #f7f8f6;
+	
+background-image: linear-gradient(bottom, rgb(66,111,179) 44%, rgb(50, 140, 175) 45%, rgb(90,135,204) 69%);
+background-image: -o-linear-gradient(bottom, rgb(66,111,179) 44%, rgb(50, 140, 175) 45%, rgb(90,135,204) 69%);
+background-image: -moz-linear-gradient(bottom, rgb(66,111,179) 44%, rgb(50, 140, 175) 45%, rgb(90,135,204) 69%);
+background-image: -webkit-linear-gradient(bottom, rgb(66,111,179) 44%, rgb(50, 140, 175) 45%, rgb(90,135,204) 69%);
+background-image: -ms-linear-gradient(bottom, rgb(66,111,179) 44%, rgb(50, 140, 175) 45%, rgb(90,135,204) 69%);
+
+background-image: -webkit-gradient(
+	linear,
+	left bottom,
+	left top,
+	color-stop(0.44, rgb(50, 140, 175)),
+	color-stop(0.45, rgb(50, 140, 175)),
+	color-stop(0.69, rgb(90,135,204))
+);
+
+}
+
+.top_azul h2 { float:left; font-size: 1em; padding: 0px 15px; }
+.top_azul .log { float: right; padding: 1px 15px; text-align: right; }
+.top_azul .log a { color: rgb(221, 221, 221);  text-decoration: none; }
+.top_azul .log a:hover { color: #f7f8f6;  text-decoration: underline; }
+
+
+#LayoutDiv1 p {
+	margin-right: 40px;
+}
+
+#LayoutDiv1 h1 { line-height: 9px; }
+
+.LayoutDiv3 {
+	float: left;
+	width: 98%;
+	text-align: center;
+	background: url(../img/bg_linha_div3_2.png) no-repeat top;
+	padding: 20px 0px 10px;
+}
+
+.LayoutDiv3 a img {
+	float: right;
+	margin-top: -26px;
+}
+
+
+.clear {
+	clear: both;
+	font-size: 0;
+}
+
+.cx {
+	width: 33%;
+	height: 230px;
+	float: left;
+	margin: 0px 4%;
+	background: url(../img/sombra.png) no-repeat bottom;
+	
+	
+}
+
+.cx_cord, .cx_fin, .cx_dir, .cx_secr {	
+	height:  205px;
+	background: rgb(239, 246, 239);
+}
+.cx_secr img, .cx_dir img, .cx_fin img, .cx_cord img {
+	margin: 4% 0px;
+}
+.cx_secr a, .cx_dir a, .cx_fin a, .cx_cord a {
+	text-decoration: none;
+}
+
+.cx_secr h3, .cx_dir h3, .cx_fin h3, .cx_cord h3 {
+	padding: 10px;
+	color: #fdfdfd;
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 12px;
+}
+.cx_secr h3 { background: #285f99; 
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0.44, rgb(50, 140, 175)),
+		color-stop(0.45, rgb(50, 140, 175)),
+		color-stop(0.69, rgb(90,135,204))
+	);
+
+}
+.cx_dir h3 { background: #d55601;
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0.44, rgb(213, 86, 1)),
+		color-stop(0.45, rgb(218, 89, 3)),
+		color-stop(0.69, rgb(230, 112, 33))
+	);
+
+}
+.cx_fin h3 { background: #227b42; 
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0.44, rgb(34, 123, 66)),
+		color-stop(0.45, rgb(34, 123, 66)),
+		color-stop(0.69, rgb(8, 150, 59))
+	);
+
+}
+.cx_cord h3 { background: rgb(95, 89, 74); 
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0.44, rgb(95, 89, 74)),
+		color-stop(0.45, rgb(95, 89, 74)),
+		color-stop(0.69, rgb(119, 113, 98))
+	);
+
+}
+
+#cx_sistemas {
+	float: left;
+	width: 93%;
+	margin: 0px 12% 15px;
+}
+
+}

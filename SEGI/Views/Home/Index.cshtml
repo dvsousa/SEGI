@@ -1,31 +1,107 @@
-﻿@{
-    ViewBag.Title = "Home Page";
+﻿
+@{
+    Layout = null;
 }
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
+<!DOCTYPE html>
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
-</div>
+
+<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
+<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
+<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html>
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Inicial</title>
+    <link href="~/Content/css/boilerplate.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/css/slyde.css" rel="stylesheet" type="text/css" />
+    <!--
+    Para saber mais sobre os comentários condicionais sobre as tags html na parte superior do arquivo:
+    paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/
+
+    Se você estiver usando a compilação personalizada do modernizr (http://www.modernizr.com/), faça o seguinte:
+    * insira o link para o seu js aqui
+    * remova o link abaixo para o html5shiv
+    * adicione a classe "no-js" às tags html na parte superior
+    * você também pode remover o link para respond.min.js se tiver incluído o MQ Polyfill na sua compilação do modernizr
+    -->
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <script src="../../Scripts/respond.min.js"></script>
+</head>
+<body>
+
+    <div class="top_azul">
+        <h2>SEGI - Sistema Escolar de Gestão Integrado </h2>
+        <div class="log">
+            Bem vindo @User.Identity.Name! <br />
+            <a href="#">Perfil </a> | <a href="#">Help </a>| <a href="#">Logout</a>
+        </div><!-- Fim do log -->
+    </div><!-- Fim do top -->
+
+
+    <div class="gridContainer clearfix">
+
+        <div id="LayoutDiv1">
+            <h1>Bem vindo ao SEGI</h1>
+            Use o Painel Inserir para acessar os modulos do sistema.
+        </div>
+
+        <div class="clear"></div>
+
+        <div id="cx_sistemas">
+            <!-- Inicio da caixa do sistemas -->
+
+            <div class="cx secretaria">
+                <div class="cx_secr">
+                    <a href="/Aluno">
+                        <h3>Secretaria</h3>
+                        <center><img src="~/Content/img/sec.png" alt="Secretaria" ></center>
+                    </a>
+                </div>
+            </div><!-- Fim da cx secretaria -->
+
+            <div class="cx diretoria">
+                <div class="cx_dir">
+                    <a href="#">
+                        <h3>Diretoria</h3>
+                        <center><img src="~/Content/img/dir.png" alt="Diretoria"></center>
+                    </a>
+                </div>
+            </div><!-- Fim da cx diretoria -->
+
+            <div class="clear"></div>
+
+            <div class="cx finaceiro">
+                <div class="cx_fin">
+                    <a href="#">
+                        <h3>Financeiro</h3>
+                        <center><img src="~/Content/img/fin.png" alt="Financeiro"></center>
+                    </a>
+                </div>
+            </div><!-- Fim da cx finaceiro -->
+
+            <div class="cx coordenacao">
+                <div class="cx_cord">
+                    <a href="#">
+                        <h3>Coordenação</h3>
+                        <center><img src="~/Content/img/cord.png" alt="Coordenação"></center>
+                    </a>
+                </div>
+
+            </div><!-- Fim da cx cordenacao -->
+
+        </div><!-- fim da caixa de sistemas -->
+
+        <div class="clear"></div>
+        <div class="LayoutDiv3">
+            Copyright 2013 - Todos os direitos resevados.
+            <center><a href="http://www.iservice-it.com/" title="iservice-it"><img src="~/Content/img/iservice.png" /></a></center>
+        </div><!-- Fim  do Layou tDiv3-->
+    </div><!-- Fim do gridContainer clearfix-->
+</body>
+</html>
