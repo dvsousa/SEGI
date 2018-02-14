@@ -20,5 +20,6 @@ namespace SEGI.Models
         }
 
         public System.Data.Entity.DbSet<SEGI.Models.Aluno> Alunoes { get; set; }
+
     }
 }

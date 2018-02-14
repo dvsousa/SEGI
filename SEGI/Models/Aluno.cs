@@ -13,6 +13,7 @@ namespace SEGI.Models
         public string Nome { get; set; }        
         public string Mae { get; set; }
         public string Pai { get; set; }
+        public int Idade { get; set; }
         
     }
 }
